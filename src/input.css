@@ -3,3 +3,14 @@
 .max-w-8xl {
     max-width: 90rem;
 }
+
+@layer base {
+
+    h1 {
+        @apply text-4xl text-white mb-6 mt-4 tracking-tight
+    }
+
+    p {
+        @apply text-gray-300 text-xl leading-relaxed font-sans font-extralight my-4 tracking-wide
+    }
+}
