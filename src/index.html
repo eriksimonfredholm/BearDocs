@@ -1,13 +1,516 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
+<body class="bg-gray-950">
+    <div class="doc-app">
+
+        <!-- Header -->
+        <header class="sticky top-0 z-50 border-b border-white/20 bg-gray-950/40 backdrop-blur-md">
+            <div class="max-w-8xl mx-auto flex items-center gap-4 py-4 px-8">
+                <a href="" class="text-white text-2xl">BearDocs</a>
+                <div class="text-white bg-slate-300/10 rounded-full text-xs px-4 py-2">
+                    <span>New! Template for documentation!</span>
+                </div>
+
+                <!-- Menu -->
+                <nav class="ml-auto">
+                    <ul class="flex gap-8 text-white font-extralight text-md">
+                        <li><a href="" class="hover:text-amber-200 ">Docs</a></li>
+                        <li><a href="" class="hover:text-amber-200">Blog</a></li>
+                        <li><a href="" class="hover:text-amber-200">Showcase</a></li>
+                        <li><a href="" class="hover:text-amber-200">Sponsor</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Buttons -->
+                <div class="flex items-center gap-8 border-l border-white/20 pl-6">
+                    <button class="text-gray-400">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.958 15.3251C21.162 14.8391 20.579 14.4251 20.09 14.6411C19.1124 15.0697 18.0564 15.2903 16.989 15.2891C12.804 15.2891 9.412 11.9651 9.412 7.86406C9.41157 6.47956 9.80487 5.12349 10.546 3.95406C10.83 3.50606 10.489 2.88606 9.969 3.01806C5.96 4.04106 3 7.61306 3 11.8621C3 16.9091 7.175 21.0001 12.326 21.0001C16.226 21.0001 19.566 18.6551 20.958 15.3251Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M15.611 3.10304C15.081 2.74904 14.449 3.38104 14.802 3.91104L15.432 4.85604C15.6878 5.2391 15.8244 5.6894 15.8244 6.15004C15.8244 6.61067 15.6878 7.06097 15.432 7.44404L14.802 8.38904C14.449 8.91904 15.082 9.55104 15.612 9.19704L16.556 8.56704C16.9391 8.31122 17.3894 8.17468 17.85 8.17468C18.3106 8.17468 18.7609 8.31122 19.144 8.56704L20.089 9.19704C20.619 9.55104 21.251 8.91904 20.897 8.38904L20.267 7.44404C20.0112 7.06097 19.8747 6.61067 19.8747 6.15004C19.8747 5.6894 20.0112 5.2391 20.267 4.85604L20.897 3.91104C21.251 3.38104 20.619 2.74904 20.088 3.10304L19.144 3.73304C18.7609 3.98886 18.3106 4.12539 17.85 4.12539C17.3894 4.12539 16.9391 3.98886 16.556 3.73304L15.611 3.10304Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </button>
+
+                    <a class="text-gray-400 hover:text-slate-200" href=""><svg width="32" height="32"
+                            viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C10.6868 2 9.38642 2.25866 8.17317 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26V21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2Z"
+                                fill="currentColor" />
+                        </svg></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="">
+            <div class="max-w-8xl mx-auto relative">
+                <!-- Sidebar -->
+                <div class="fixed bg-gray-950 px-8 w-76 top-17 bottom-0 h-auto text-white overflow-y-auto">
+                    <div class="search sticky top-0 z-50">
+                        <!-- Spacing -->
+                        <div class="bg-gray-950 -top-1 h-12"></div>
+                        <div class="flex relative items-center bg-gray-950">
+                            <label for="search" id="search" class="text-gray-400 absolute left-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                            </label>
+                            <input
+                                class="bg-gray-800 py-2 rounded-lg w-full max-w-full border-t border-gray-600 hover:bg-gray-800/60 text-sm px-10"
+                                type="text" name="" id="" placeholder="Quicksearch...">
+                            <span class="text-gray-400 absolute text-sm right-3 pl-8">
+                                ⌘K
+                            </span>
+                        </div>
+                        <!-- Gradient spacing -->
+                        <div class="h-12 bg-linear-to-b from-gray-950"></div>
+                    </div>
+
+                    <nav class="text-gray-400">
+                        <!-- Main sidebar menu -->
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <a class="group flex items-center gap-4 group" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-md tracking-wider text-white font-light group-hover:text-white">Documentation</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+                                        </svg>
+
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">Components</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">Layout</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">UI Kit</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                                        </svg>
+
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">Playground</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="group-hover:text-white text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">Course</span>
+                                    <div
+                                        class="py-0.5 px-2 text-sky-300 bg-sky-300/10 group-hover:bg-sky-300/15 border border-dashed border-sky-300/50 ">
+                                        New!
+                                        <svg width="5" height="5" viewBox="0 0 5 5"
+                                            class="absolute top-[-2px] left-[-2px] fill-sky-300 dark:fill-sky-300/50">
+                                            <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z"></path>
+                                        </svg>
+                                        <svg width="5" height="5" viewBox="0 0 5 5"
+                                            class="absolute top-[-2px] right-[-2px] fill-sky-300 dark:fill-sky-300/50">
+                                            <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z"></path>
+                                        </svg>
+                                        <svg width="5" height="5" viewBox="0 0 5 5"
+                                            class="absolute bottom-[-2px] left-[-2px] fill-sky-300 dark:fill-sky-300/50">
+                                            <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z"></path>
+                                        </svg>
+                                        <svg width="5" height="5" viewBox="0 0 5 5"
+                                            class="absolute bottom-[-2px] right-[-2px] fill-sky-300 dark:fill-sky-300/50">
+                                            <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="group flex items-center gap-4" href="">
+                                    <div class="text-gray-500 group-hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                        </svg>
+
+
+                                    </div>
+                                    <span class="text-md tracking-wider font-extralight text-gray-200 group-hover:text-white">Community</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Chapter 1 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-white hover:border-l-white -ml-px my-3"><a class="px-4 group-hover:text-white text-white font-medium" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 2 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Chapter 3 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 4 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 5 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 6 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 7 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 8 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 9 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 10 -->
+                        <div class="relative mt-12">
+                            <h5 class="font-mono uppercase text-sm mb-5">Getting Started</h5>
+                            <ul class="text-gray-200 font-extralight tracking-wider border-l border-l-gray-600">
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Documentation</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Components</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Templates</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Screencasts</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Playgroud</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Resources</a></li>
+                                <li class="group relative border-l border-l-gray-600 hover:border-l-gray-400 -ml-px my-3"><a class="px-4 group-hover:text-white" href="">Community</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Main content -->
+                <main class="pl-76 pt-12 text-white">
+                    <article class="pl-12 pr-8">
+                        <span>Installation</span>
+                        <h1 class="text-5xl text-white my-4">Getting Started</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde enim minima sequi vitae
+                            quaerat
+                            aperiam, hic totam saepe quidem nostrum debitis praesentium aut, est a. Corporis ut
+                            facilis
+                            eveniet sapiente!
+                            Quam id molestiae eum nulla laboriosam necessitatibus? Quidem ab qui corrupti fugit
+                            asperiores, saepe sit labore vero eveniet distinctio aliquam quasi non magni eligendi
+                            expedita velit inventore repellat, eius veritatis.
+                            Error aliquid reprehenderit distinctio fugiat, modi maxime. Commodi totam quisquam omnis
+                            corrupti quos saepe qui eum tempore exercitationem vitae ullam repellat, facere pariatur
+                            placeat sed. Pariatur fuga vitae assumenda voluptas.
+                            Aut nobis quibusdam voluptate aliquam delectus, tenetur ad? Exercitationem praesentium
+                            molestiae enim eligendi nostrum. Id harum amet blanditiis sed facilis consequuntur ipsam
+                            quibusdam, temporibus enim excepturi, in officiis aliquid! Beatae!
+                            At obcaecati dolorum debitis magni, quas possimus consectetur praesentium veniam
+                            accusantium
+                            inventore quidem accusamus iure tempora. Voluptates sequi veniam incidunt rem aperiam?
+                            Quas
+                            reiciendis mollitia, quasi magnam officia vitae distinctio.
+                            Odit error explicabo odio et nam possimus? Cum dolores deleniti alias qui tempore.
+                            Laudantium, architecto magnam. Perferendis quasi nam quia, enim adipisci vel praesentium
+                            impedit sit veniam veritatis recusandae quibusdam!
+                            Omnis earum odio veritatis tempore laboriosam, ratione hic. Quisquam unde quasi harum
+                            laboriosam cumque architecto voluptas dignissimos. Dolor quibusdam omnis, iusto, dolore
+                            aliquid rem velit possimus, harum vero quam fugiat?
+                            Eveniet, quo. Consequatur porro autem nostrum doloremque debitis vitae, enim eos eum
+                            dolor
+                            facere aliquam inventore similique deserunt ipsam dicta illo cumque atque numquam? Ullam
+                            at
+                            voluptatibus odit quidem esse!
+                            Eos deleniti, architecto iusto temporibus deserunt laudantium, assumenda quod sed soluta
+                            maiores suscipit sit repellat beatae quaerat tempora distinctio eveniet sint, fuga dicta
+                            officiis quo debitis possimus ducimus! Optio, hic.
+                            Suscipit, corrupti molestiae? Iure non, perferendis aut, adipisci ad architecto odit
+                            exercitationem labore consequuntur repellendus suscipit quisquam dignissimos harum
+                            dolorem
+                            praesentium dolores tempora fugiat error obcaecati pariatur. Reprehenderit,
+                            necessitatibus
+                            dolorum.
+                            Sequi, repellendus. Facilis tempore mollitia excepturi vitae assumenda amet impedit
+                            pariatur
+                            totam at distinctio placeat dolores praesentium perferendis aut laudantium quia,
+                            incidunt
+                            minima suscipit exercitationem! Natus maiores odio soluta eaque.
+                            Officiis cupiditate illum, aut, saepe nemo iste nesciunt maiores accusantium vero quos
+                            nostrum ex explicabo quaerat, mollitia harum porro odio culpa? Repellat atque architecto
+                            quam, iure officia facilis consequuntur aspernatur?
+                            Commodi, perferendis. Dolor nihil atque id quam eius a blanditiis labore iusto
+                            consequuntur
+                            ab vero, excepturi fuga ea cupiditate rem facilis eaque dolores minus saepe qui,
+                            voluptates
+                            quibusdam iure eum!
+                            Obcaecati labore libero neque voluptatem eaque placeat, expedita vel facilis pariatur
+                            magnam! Laboriosam, incidunt? Vel soluta dolorum nobis voluptas sequi nisi esse dolor
+                            voluptatibus rerum? Maxime perferendis nobis repellendus esse!
+                            Deserunt, fuga impedit nobis unde modi doloremque labore? Consequatur fugit officiis
+                            maiores
+                            necessitatibus eligendi illo. Nemo quia dolor tempore nobis quisquam, magni obcaecati
+                            iure
+                            quo delectus beatae impedit voluptatum accusamus?
+                            Repellendus rerum ea deserunt non quidem ad placeat quos ex aliquid ipsam deleniti, modi
+                            praesentium minus corporis excepturi qui corrupti laudantium debitis sunt suscipit
+                            quaerat
+                            quisquam quia. At, laborum sequi!
+                            Minima, repudiandae molestias! Commodi aut perspiciatis doloribus laborum, dicta, magnam
+                            nostrum, mollitia est consequatur eligendi rerum excepturi facere eos quos asperiores
+                            officiis dolorem quod quo quisquam. Laborum impedit laboriosam nisi.
+                            Odit aliquid necessitatibus perspiciatis aspernatur sequi, ad facere dignissimos
+                            suscipit
+                            impedit hic soluta labore commodi sint esse dolores, voluptates accusantium animi
+                            voluptas
+                            laboriosam? Voluptatum libero recusandae, incidunt cum odio neque!
+                            Debitis hic accusamus enim animi saepe culpa libero, recusandae rem veritatis. Accusamus
+                            illum mollitia ipsum distinctio expedita dolor sequi omnis, officia sunt nesciunt maxime
+                            fugiat magni nam porro! Cumque, officiis.
+                            Commodi nisi ab quisquam qui fugiat aliquid cupiditate vero ducimus eos minus. Porro
+                            pariatur labore ratione dolorem, maiores nobis numquam animi saepe repellat provident
+                            magni
+                            accusamus sed doloribus laboriosam quas. Lorem ipsum dolor sit amet consectetur,
+                            adipisicing
+                            elit. Odit natus dolores consequuntur velit reprehenderit accusamus quam iste
+                            exercitationem
+                            labore expedita in cupiditate esse, consequatur quasi consectetur? Aliquam, velit
+                            obcaecati.
+                            Vitae.
+                            Dolorem at, enim atque a voluptates magni illum similique minus dicta iure eaque labore
+                            architecto fugiat id necessitatibus quisquam quam doloremque tenetur. Repellendus harum
+                            perspiciatis quasi aspernatur earum eveniet dolor?
+                            Saepe fugit, esse iusto dolor sit aperiam officia quos facilis harum quibusdam commodi
+                            possimus temporibus laboriosam ab illum placeat officiis beatae, quo debitis ipsam ad
+                            omnis
+                            incidunt sint! Iusto, adipisci.
+                            Dicta hic earum alias natus corrupti, dignissimos eveniet ducimus accusantium ullam
+                            eaque
+                            at, molestias doloremque libero repellat quis? Architecto cupiditate, et labore corrupti
+                            asperiores modi aut! Unde dolorum quaerat nisi.
+                            Ut debitis autem ipsam sunt iste, atque voluptatem laudantium laborum quas natus animi
+                            dolorum, fugit dolor expedita aliquam! Laboriosam autem fuga placeat vitae voluptatum id
+                            voluptatibus ipsa delectus veniam reprehenderit.
+                            Veniam ducimus beatae obcaecati, aperiam placeat earum ex officiis iusto nihil
+                            consequuntur
+                            asperiores id nisi in? Eius, eaque accusamus nulla, laborum magni libero sed labore ipsa
+                            consequuntur qui obcaecati maiores.
+                            Eum ducimus a iste quisquam dicta quam eveniet ipsam cum veniam incidunt possimus, eaque
+                            sit
+                            libero ipsa deleniti laudantium blanditiis aut! Nemo consequuntur dicta aliquam saepe
+                            aut
+                            doloribus. Est, quos.
+                            Quo, cum. Voluptas reprehenderit earum optio magnam modi libero molestiae quis et
+                            consectetur nobis. Mollitia beatae perferendis ea. Tempore facilis unde illum natus
+                            exercitationem enim veniam saepe, atque adipisci amet.
+                            A voluptatem quia sit accusamus distinctio? Vel consequuntur reprehenderit ab
+                            perferendis,
+                            aliquam eius id animi dolores est voluptatibus, ipsa cumque! Suscipit a rerum aliquam
+                            doloremque! Fugiat voluptatem labore reprehenderit. Dolorum.
+                            Temporibus cumque reprehenderit laudantium aspernatur dolor est exercitationem, eum cum
+                            alias repudiandae nobis, nam doloremque voluptatum rem! Veritatis quibusdam, officia
+                            optio
+                            temporibus magni eum necessitatibus aliquam iusto rerum dignissimos dolor.
+                            Adipisci voluptatem facere eum libero deleniti, excepturi delectus hic, similique
+                            tenetur
+                            dolore molestias facilis rerum ea assumenda reiciendis tempore veritatis a quibusdam. Ex
+                            repellendus a doloribus natus necessitatibus ab amet.
+                            Molestias eaque quisquam at? Consectetur aut unde rerum optio ab, dolores perferendis
+                            provident error? Eius debitis quae nemo odio magni deleniti, dicta facere a
+                            exercitationem
+                            vitae voluptas optio, velit expedita?
+                            Ex, quibusdam ab. Necessitatibus quas natus magni recusandae animi. Tempore cum sed
+                            officia,
+                            odit nulla repudiandae eaque aliquid minus nisi voluptate consequatur animi! Cumque
+                            delectus
+                            aliquid tempore expedita sunt voluptatibus.
+                            Velit laborum rerum voluptate eius voluptatum dolor? Ullam sunt aspernatur quisquam
+                            reprehenderit consequuntur veniam quo sed in explicabo voluptatem ex, autem cupiditate.
+                            Ea
+                            nesciunt natus aliquid perspiciatis eveniet omnis maxime!
+                            Natus delectus enim libero aspernatur nostrum nemo iste dignissimos itaque voluptatibus,
+                            aliquam ducimus molestiae accusantium officiis laborum, consequatur tenetur quia tempora
+                            vero doloribus cumque voluptatum nesciunt. Assumenda libero recusandae optio!
+                            Repellendus sint id consequuntur expedita eaque qui corrupti dolorum laborum in illum
+                            libero
+                            minus voluptate aliquam error sunt, est voluptatibus vitae? Quam, iure. Rerum adipisci
+                            ullam
+                            possimus ratione autem libero.
+                            Possimus aperiam odit distinctio ut id ipsa modi impedit quo rem delectus? Tenetur nemo
+                            a
+                            quidem reprehenderit. Autem, provident, reprehenderit voluptatibus pariatur laborum
+                            tempora
+                            at consequuntur, facilis dignissimos obcaecati porro?
+                            Neque accusantium, officia vel deserunt autem quo cum reiciendis, voluptates ratione
+                            odit
+                            culpa magnam eum nihil ullam voluptas illo optio soluta asperiores fugiat distinctio
+                            eos.
+                            Assumenda excepturi nisi similique quam.
+                            Officiis, unde? Blanditiis eveniet, quaerat facilis accusamus quisquam voluptatum minima
+                            suscipit temporibus. Sapiente corporis, tempora earum eaque impedit voluptates qui eos
+                            deserunt, nam ratione dolores quasi architecto recusandae nulla cum.
+                            Quis repellat cumque provident officiis hic ullam, eos, quod nesciunt, qui aliquid harum
+                            modi neque eveniet rem? Illum, consectetur laborum. Necessitatibus voluptate sit quasi
+                            id
+                            non optio repellat beatae ipsa.</p>
+
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
