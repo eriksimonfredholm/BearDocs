@@ -7,7 +7,15 @@
 @layer base {
 
     h1 {
-        @apply text-4xl text-white mb-6 mt-4 tracking-tight
+        @apply text-4xl text-white mb-8 mt-3 tracking-tight
+    }
+
+    h2 {
+        @apply text-xl font-normal text-white mt-12
+    }
+
+    h3 {
+        @apply text-base font-normal text-gray-200 
     }
 
     p {
