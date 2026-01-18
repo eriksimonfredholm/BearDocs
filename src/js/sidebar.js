@@ -10,16 +10,7 @@ const sidebar = () => {
         overlay.classList.toggle('hidden')
     }
 
-    // const closeSidebar = () => {
-    //     sidebar.classList.add("hidden")
-    //     overlay.classList.add("hidden")
-    // }
-
-    // sidebarButton.addEventListener('click', closeSidebar())
     sidebarButton.addEventListener('click', openCloseSidebar)
-
 }
-
-
 
 sidebar()
